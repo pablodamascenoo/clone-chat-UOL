@@ -175,7 +175,7 @@ aside > nav {
     left: calc(100vw - 270px);
     /* position: relative; */
     background-color: #FFF;
-    width: 300px;
+    width: 450px;
     height: 100%;
     display: flex;
     flex-direction: column;
