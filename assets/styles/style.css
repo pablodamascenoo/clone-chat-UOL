@@ -6,8 +6,8 @@
 
 body{
     background-color: #F3F3F3;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     font-size: 14px;
 }
 
@@ -157,4 +157,56 @@ span{
 
 .disabled{
     display: none;
+}
+
+aside{
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+aside > nav {
+    left: calc(100vw - 259px);
+    position: relative;
+    background-color: #FFF;
+    width: 259px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+nav > .side-title {
+    text-align: center;
+    line-height: 19px;
+    padding: 40px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.people, .visibility{
+    margin-left: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+}
+
+.option > ion-icon{
+    font-size: 25px;
+    margin-right: 8px;
+}
+
+.option > p {
+    font-size: 16px;
+    font-family: 'Roboto';
 }
