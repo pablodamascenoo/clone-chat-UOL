@@ -56,7 +56,7 @@ footer{
 }
 
 .footer-content > input{
-    width: 145px;
+    width: 80%;
     height: 30px;
     color: #000;
     font-weight: 400;
@@ -107,4 +107,54 @@ footer{
 
 span{
     font-weight: normal;
+}
+
+
+.login{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-content > img {
+    margin-top: 72px;
+    width: 130px;
+    height: 92px;
+}
+
+.login-content > input{
+    margin: 92px 0 15px;
+    font-size: 18px;
+    color:#AEAEAE;
+    width: 261px;
+    height: 54px;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.login-content > button{
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    background-color: #E7E7E7;
+    color: #696969;
+    font-size: 18px;
+    width: 109px;
+    height: 45px;
+}
+
+.disabled{
+    display: none;
 }

@@ -1,7 +1,4 @@
-
-let messages = []
 let user = ""
-let logged = false
 let intervalMessages = null
 let intervalParticipant = null
 
@@ -17,7 +14,6 @@ function printAllMessages(obj){
     document.querySelector(".messages-box").innerHTML = ""
     
     let data = obj.data
-    messages = [data]
 
     for(let i=0; i<data.length; i++){
         printMessage(data[i])
@@ -52,13 +48,13 @@ function refreshLogIn(){
     let promisse = axios.post("https://mock-api.driven.com.br/api/v4/uol/status", obj)
 
     promisse.catch((object)=>{
-        logIn()
+        window.location.reload()
     })
 }
 
 function logIn(){
 
-    user = prompt("Digite seu nome")
+    user = document.querySelector("#name").value
 
     let obj = {
         name: user
@@ -69,9 +65,10 @@ function logIn(){
         refreshMessages()
         intervalMessages = setInterval(refreshMessages, 3000)
         intervalParticipant = setInterval(refreshLogIn, 5000)
+        document.querySelector(".login").classList.add("disabled")
     })
     promisse.catch((object)=>{
-        logIn()
+        window.location.reload()
     })
 }
 
@@ -92,7 +89,7 @@ function sendMessage(){
 
     promisse.then(refreshMessages)
     promisse.catch((error)=>{
-        console.log(error)
+        window.location.reload()
     })
 
 }
@@ -104,5 +101,3 @@ message_area.addEventListener("keypress", (e)=>{
         sendMessage()
     }
 })
-
-logIn()
