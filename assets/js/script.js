@@ -72,4 +72,34 @@ function logIn(){
     })
 }
 
+function sendMessage(){
+
+    let message = message_area.value
+
+    let obj = {
+        from: user,
+        to: "Todos",
+        text: message,
+        type: "message" // ou "private_message" para o bônus
+    }
+
+    let promisse = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", obj)
+
+    message_area.value = ""
+
+    promisse.then(refreshMessages)
+    promisse.catch((error)=>{
+        console.log(error)
+    })
+
+}
+
+let message_area = document.querySelector("#message_area")
+
+message_area.addEventListener("keypress", (e)=>{
+    if(e.key === "Enter"){
+        sendMessage()
+    }
+})
+
 logIn()
