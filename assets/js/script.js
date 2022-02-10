@@ -1,6 +1,10 @@
 let user = ""
 let intervalMessages = null
 let intervalParticipant = null
+let options = {
+    people: "",
+    visibility: ""
+}
 
 function refreshMessages(){
 
@@ -101,3 +105,34 @@ message_area.addEventListener("keypress", (e)=>{
         sendMessage()
     }
 })
+
+
+function toggleCheck(obj){
+
+    if(obj.parentNode.classList.contains("people")){
+        if(options.people !== ""){
+            obj.parentNode.querySelector(".check").classList.remove("check")
+            obj.lastElementChild.classList.add("check")
+            options.people = obj.querySelector("div > p").innerText
+            console.log(options)
+        }
+        else{
+            obj.lastElementChild.classList.add("check")
+            options.people = obj.querySelector("div > p").innerText
+            console.log(options)
+        }
+    }
+    else{
+        if(options.visibility !== ""){
+            obj.parentNode.querySelector(".check").classList.remove("check")
+            obj.lastElementChild.classList.add("check")
+            options.visibility = obj.querySelector("div > p").innerText
+            console.log(options)
+        }
+        else{
+            obj.lastElementChild.classList.add("check")
+            options.visibility = obj.querySelector("div > p").innerText
+            console.log(options)
+        }
+    }
+}

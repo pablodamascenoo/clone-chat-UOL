@@ -170,7 +170,7 @@ aside{
 }
 
 aside > nav {
-    left: calc(100vw - 259px);
+    left: calc(100vw - 270px);
     position: relative;
     background-color: #FFF;
     width: 259px;
@@ -190,6 +190,7 @@ nav > .side-title {
 }
 
 .people, .visibility{
+    width: 80%;
     margin-left: 17px;
     display: flex;
     flex-direction: column;
@@ -197,16 +198,34 @@ nav > .side-title {
 }
 
 .option{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;    
+}
+
+.option >div> ion-icon{
+    font-size: 25px;
+    margin-right: 8px;
+}
+
+.option > div> p {
+    font-size: 16px;
+    font-family: 'Roboto';
+}
+
+.option > div{
     display: flex;
     align-items: center;
 }
 
 .option > ion-icon{
-    font-size: 25px;
-    margin-right: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #28BB25;
+    display: none;
 }
 
-.option > p {
-    font-size: 16px;
-    font-family: 'Roboto';
+
+.option > .check{
+    display:inline
 }
