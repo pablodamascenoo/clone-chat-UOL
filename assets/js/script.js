@@ -1,5 +1,9 @@
 
 let messages = []
+let user = ""
+let logged = false
+let intervalMessages = null
+let intervalParticipant = null
 
 function refreshMessages(){
 
@@ -9,9 +13,11 @@ function refreshMessages(){
 
 function printAllMessages(obj){
 
+    
     document.querySelector(".messages-box").innerHTML = ""
-
+    
     let data = obj.data
+    messages = [data]
 
     for(let i=0; i<data.length; i++){
         printMessage(data[i])
@@ -35,4 +41,35 @@ function printMessage(content){
     document.querySelector(".messages-box").appendChild(message)
 }
 
-setInterval(refreshMessages, 3000)
+function refreshLogIn(){
+    let obj = {
+        name: user
+    }
+
+    let promisse = axios.post("https://mock-api.driven.com.br/api/v4/uol/status", obj)
+
+    promisse.catch((object)=>{
+        logIn()
+    })
+}
+
+function logIn(){
+
+    user = prompt("Digite seu nome")
+
+    let obj = {
+        name: user
+    }
+
+    let promisse = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", obj)
+    promisse.then((object)=>{
+        refreshMessages()
+        intervalMessages = setInterval(refreshMessages, 3000)
+        intervalParticipant = setInterval(refreshLogIn, 5000)
+    })
+    promisse.catch((object)=>{
+        logIn()
+    })
+}
+
+logIn()
