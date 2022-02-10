@@ -114,12 +114,10 @@ function toggleCheck(obj){
             obj.parentNode.querySelector(".check").classList.remove("check")
             obj.lastElementChild.classList.add("check")
             options.people = obj.querySelector("div > p").innerText
-            console.log(options)
         }
         else{
             obj.lastElementChild.classList.add("check")
             options.people = obj.querySelector("div > p").innerText
-            console.log(options)
         }
     }
     else{
@@ -127,12 +125,14 @@ function toggleCheck(obj){
             obj.parentNode.querySelector(".check").classList.remove("check")
             obj.lastElementChild.classList.add("check")
             options.visibility = obj.querySelector("div > p").innerText
-            console.log(options)
         }
         else{
             obj.lastElementChild.classList.add("check")
             options.visibility = obj.querySelector("div > p").innerText
-            console.log(options)
         }
     }
+}
+
+function toggleAside(){
+    document.querySelector("aside").classList.toggle("disabled")
 }

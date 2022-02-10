@@ -17,12 +17,12 @@
     <header>
         <nav>
             <img src="assets/images/logo 1.png" alt="Bate Papo UOL">
-            <ion-icon name="people"></ion-icon>
+            <ion-icon name="people" onclick="toggleAside()"></ion-icon>
         </nav>
     </header>
 
     <main>
-        <div class="login disabled">
+        <div class="login disabled"> <!-- -->
             <div class="login-content">
                 <img src="assets/images/logo 1.png" alt="Bate Papo UOL">
                 <input type="text" id="name" placeholder="Digite seu nome">
@@ -33,7 +33,8 @@
         </div>
     </main>
 
-    <aside>
+    <aside class="disabled">
+        <div class="transparent" onclick="toggleAside()"></div>
         <nav>
             <p class="side-title">Escolha um contato
                 para enviar mensagem:</p>
