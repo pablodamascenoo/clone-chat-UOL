@@ -134,23 +134,29 @@ function toggleCheck(obj){
 
     if(obj.parentNode.classList.contains("people")){
         if(obj.parentNode.querySelector(".check") !== null){
+            obj.parentNode.querySelector(".check").parentNode.classList.remove("green_border")
             obj.parentNode.querySelector(".check").classList.remove("check")
             obj.lastElementChild.classList.add("check")
+            obj.classList.add("green_border")
             options.people = obj.querySelector("div > p").innerText
         }
         else{
             obj.lastElementChild.classList.add("check")
+            obj.classList.add("green_border")
             options.people = obj.querySelector("div > p").innerText
         }
     }
     else{
         if(options.visibility !== ""){
+            obj.parentNode.querySelector(".check").parentNode.classList.remove("green_border")
             obj.parentNode.querySelector(".check").classList.remove("check")
             obj.lastElementChild.classList.add("check")
+            obj.classList.add("green_border")
             options.visibility = obj.querySelector("div > p").innerText
         }
         else{
             obj.lastElementChild.classList.add("check")
+            obj.classList.add("green_border")
             options.visibility = obj.querySelector("div > p").innerText
         }
     }
@@ -193,6 +199,7 @@ function reloadParticipants(){
 
         if(options.people === "Todos"){
             participants.lastElementChild.lastElementChild.classList.add("check")
+            participants.lastElementChild.classList.add("green_border")
         }
 
         data = obj.data
@@ -210,6 +217,7 @@ function reloadParticipants(){
 
             if(options.people === data[i].name){
                 participants.lastElementChild.lastElementChild.classList.add("check")
+                participants.lastElementChild.classList.add("green_border")
             }
         }
     })
