@@ -99,7 +99,7 @@ function sendMessage(){
         from: user,
         to: options.people,
         text: message,
-        type: type // ou "private_message" para o bônus
+        type: type
     }
 
     let promisse = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", obj)
@@ -118,6 +118,14 @@ let message_area = document.querySelector("#message_area")
 message_area.addEventListener("keypress", (e)=>{
     if(e.key === "Enter"){
         sendMessage()
+    }
+})
+
+let login_area = document.querySelector("#name")
+
+login_area.addEventListener("keypress", (e)=>{
+    if(e.key === "Enter"){
+        logIn()
     }
 })
 
@@ -187,7 +195,6 @@ function reloadParticipants(){
                 <ion-icon name="checkmark"></ion-icon>
             </div>`
 
-            // console.log(options.people, data[i].nome)
             if(options.people === data[i].name){
                 participants.lastElementChild.lastElementChild.classList.add("check")
             }
