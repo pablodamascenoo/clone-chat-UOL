@@ -105,6 +105,8 @@ footer{
 }
 
 .name{
+    max-width: 100px;
+    overflow: hidden;
     font-weight: 700;
 }
 
@@ -175,16 +177,19 @@ aside{
 }
 
 aside > nav {
-    left: calc(100vw - 270px);
-    /* position: relative; */
+    overflow: hidden;
+    left: calc(100% - 350px);
     background-color: #FFF;
-    width: 450px;
+    width: 350px;
+    position: absolute;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
     margin: 0;
+    animation-name: nav_animation;
+    animation-duration: 1s;
 }
 nav > .side-title {
     text-align: center;
@@ -240,4 +245,22 @@ nav > .side-title {
 .transparent{
     width: 70%;
     height: 100%;
+}
+
+@keyframes nav_animation {
+    from {margin-left: 100%;}
+    to {margin-left: 0;}
+}
+
+@keyframes nav_animation_out{
+    from {margin-left: 0;}
+    to {margin-left: 100%;}
+}
+
+.nav_out {
+
+    /* animation-fill-mode: forwards; */
+    animation-name: nav_animation_out;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
 }

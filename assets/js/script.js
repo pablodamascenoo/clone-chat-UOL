@@ -158,7 +158,18 @@ function toggleCheck(obj){
 
 function toggleAside(){
     reloadParticipants()
-    document.querySelector("aside").classList.toggle("disabled")
+
+    if(!document.querySelector("aside").classList.contains("disabled")){
+        document.querySelector("aside > nav").classList.add("nav_out")
+        setTimeout(()=>{
+            document.querySelector("aside").classList.toggle("disabled")
+        }, 300)
+    }
+    else{
+        document.querySelector("aside > nav").classList.remove("nav_out")
+        document.querySelector("aside").classList.toggle("disabled")
+    }
+
 }
 
 function reloadParticipants(){
