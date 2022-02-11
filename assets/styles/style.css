@@ -112,6 +112,7 @@ footer{
     height: inherit;
     gap: 5px;
     border-radius: 2px;
+    overflow-wrap: break-word;
 }
 
 .message{
