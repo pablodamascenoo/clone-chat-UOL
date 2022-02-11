@@ -183,7 +183,7 @@ function reloadParticipants(){
         let participants = document.querySelector(".people")
 
         participants.innerHTML = `
-        <div class="option" onclick="toggleCheck(this)">
+        <div class="option" data-identifier="participant" onclick="toggleCheck(this)">
             <div>
                 <ion-icon name="people"></ion-icon>
                 <p>Todos</p>
@@ -200,7 +200,7 @@ function reloadParticipants(){
         for(let i=0; i<data.length; i++){
 
             participants.innerHTML += `
-            <div class="option" onclick="toggleCheck(this)">
+            <div class="option" data-identifier="participant" onclick="toggleCheck(this)">
                 <div>
                     <ion-icon name="person-circle"></ion-icon>
                     <p>${data[i].name}</p>
