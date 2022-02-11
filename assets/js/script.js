@@ -2,8 +2,8 @@ let user = ""
 let intervalMessages = null
 let intervalParticipant = null
 let options = {
-    people: "",
-    visibility: ""
+    people: "Todos",
+    visibility: "Público"
 }
 
 function refreshMessages(){
@@ -80,6 +80,10 @@ function logIn(){
 function sendMessage(){
 
     let message = message_area.value
+
+    if(message === ""){
+        return
+    }
 
     let type = ""
 
@@ -166,9 +170,14 @@ function reloadParticipants(){
             <ion-icon name="checkmark"></ion-icon>
         </div>`
 
+        if(options.people === "Todos"){
+            participants.lastElementChild.lastElementChild.classList.add("check")
+        }
+
         data = obj.data
 
         for(let i=0; i<data.length; i++){
+
             participants.innerHTML += `
             <div class="option" onclick="toggleCheck(this)">
                 <div>
@@ -177,6 +186,11 @@ function reloadParticipants(){
                 </div>
                 <ion-icon name="checkmark"></ion-icon>
             </div>`
+
+            // console.log(options.people, data[i].nome)
+            if(options.people === data[i].name){
+                participants.lastElementChild.lastElementChild.classList.add("check")
+            }
         }
     })
 
