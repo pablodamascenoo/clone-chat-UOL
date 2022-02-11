@@ -61,6 +61,10 @@ function logIn(){
 
     user = document.querySelector("#name").value
 
+    if(user === ""){
+        return
+    }
+
     let obj = {
         name: user
     }
@@ -73,6 +77,7 @@ function logIn(){
         document.querySelector(".login").classList.add("disabled")
     })
     promisse.catch((object)=>{
+        alert("Tente outro nome")
         window.location.reload()
     })
 }
