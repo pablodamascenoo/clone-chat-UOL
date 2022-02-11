@@ -154,6 +154,8 @@ function toggleCheck(obj){
             options.visibility = obj.querySelector("div > p").innerText
         }
     }
+
+    document.querySelector(".footer-content").lastElementChild.innerHTML = `Enviando para ${options.people} (${options.visibility})`
 }
 
 function toggleAside(){
@@ -162,12 +164,12 @@ function toggleAside(){
     if(!document.querySelector("aside").classList.contains("disabled")){
         document.querySelector("aside > nav").classList.add("nav_out")
         setTimeout(()=>{
-            document.querySelector("aside").classList.toggle("disabled")
-        }, 1000)
+            document.querySelector("aside").classList.add("disabled")
+        }, 500)
     }
     else{
         document.querySelector("aside > nav").classList.remove("nav_out")
-        document.querySelector("aside").classList.toggle("disabled")
+        document.querySelector("aside").classList.remove("disabled")
     }
 
 }

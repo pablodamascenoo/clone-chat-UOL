@@ -26,7 +26,7 @@ header{
     align-items: center;
 }
 
-nav, .footer-content{
+nav, .footer-content>div{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,6 +40,7 @@ nav > ion-icon{
 
 main{
     padding-bottom: 80px;
+    overflow-y: hidden;
 }
 
 footer{
@@ -51,24 +52,45 @@ footer{
 
 .footer-content{
     margin: 0 18px;
+    width: 100%;
 }
 
-.footer-content > ion-icon{
+.footer-content>div{
+    margin: 0;
+}
+
+.footer-content > div > ion-icon{
     cursor: pointer;
     font-size: 26px;
 }
 
-.footer-content > input{
+.footer-content > div >input{
     width: 80%;
     height: 30px;
-    color: #000;
     font-weight: 400;
     font-size: 18px;
     font-style: italic;
     border: none;
 }
 
-.footer-content >input:focus{
+.footer-content:last-child{
+    font-family: 'Roboto';
+    color: #717171;
+    font-weight: 300;
+}
+
+.footer-content > div >input::placeholder{
+    color: black;
+}
+
+.footer-content > div >input:-ms-input-placeholder{
+    color: black;
+}
+.footer-content > div >input::-ms-input-placeholder{
+    color: black;
+}
+
+.footer-content > div >input:focus{
     outline: none;
 }
 
@@ -77,10 +99,13 @@ footer{
     flex-direction: column;
     margin: 106px 0 26px 0;
     gap: 4px;
+    overflow: hidden;
+    overflow-y: hidden;
 }
 
 .message-display{
     padding: 15px;
+    line-height: 25px;
     align-self: center;
     width: 100%;
     min-height: 40px;
@@ -164,7 +189,6 @@ span{
 }
 
 aside{
-    overflow-y: scroll;
     z-index: 100;
     top: 0;
     left: 0;
@@ -178,6 +202,7 @@ aside{
 
 aside > nav {
     overflow: hidden;
+    overflow-y: scroll;
     left: calc(100% - 60%);
     background-color: #FFF;
     width: 60%;
@@ -189,7 +214,7 @@ aside > nav {
     align-items: start;
     margin: 0;
     animation-name: nav_animation;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 nav > .side-title {
     text-align: center;
@@ -206,6 +231,10 @@ nav > .side-title {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.visibility{
+    margin-bottom: 50px;
 }
 
 .option{
@@ -259,8 +288,8 @@ nav > .side-title {
 
 .nav_out {
 
-    /* animation-fill-mode: forwards; */
+    animation-fill-mode: forwards;
     animation-name: nav_animation_out;
     animation-timing-function: ease;
-    animation-duration: 1.5s;
+    animation-duration: 0.5s;
 }
