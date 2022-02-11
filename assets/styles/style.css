@@ -80,10 +80,11 @@ footer{
 }
 
 .message-display{
+    padding: 15px;
+    align-self: center;
+    width: 100%;
     min-height: 40px;
     height: inherit;
-    display: flex;
-    align-items: center;
     gap: 5px;
     border-radius: 2px;
 }
@@ -105,8 +106,6 @@ footer{
 }
 
 .name{
-    max-width: 100px;
-    overflow: hidden;
     font-weight: 700;
 }
 
@@ -165,6 +164,7 @@ span{
 }
 
 aside{
+    overflow-y: scroll;
     z-index: 100;
     top: 0;
     left: 0;
@@ -178,9 +178,9 @@ aside{
 
 aside > nav {
     overflow: hidden;
-    left: calc(100% - 350px);
+    left: calc(100% - 60%);
     background-color: #FFF;
-    width: 350px;
+    width: 60%;
     position: absolute;
     height: 100%;
     display: flex;
@@ -243,7 +243,7 @@ nav > .side-title {
 }
 
 .transparent{
-    width: 70%;
+    width: 40%;
     height: 100%;
 }
 

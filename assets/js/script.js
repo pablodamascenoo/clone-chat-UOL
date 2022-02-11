@@ -29,18 +29,18 @@ function printAllMessages(obj){
 function printMessage(content){
     
     if(!(content.type === "private_message" && content.to !== user && content.from !== user)){
-        let message = document.createElement("div")
+        let message = document.createElement("p")
         message.classList.add("message-display", content.type)
-        message.innerHTML = `<p class="time">(${content.time})</p>`
+        message.innerHTML = `<span class="time">(${content.time}) </span>`
         if(content.type !== "status" ){
-            message.innerHTML += `<h2 class="name">${content.from} <span>to</span> ${content.to}: </h2>`
+            message.innerHTML += `<span class="name">${content.from} <span>to</span> ${content.to}: </span>`
         }
         else{
-            message.innerHTML += `<h2 class="name">${content.from}</h2>`
+            message.innerHTML += `<span class="name">${content.from} </span>`
         }
-        message.innerHTML += `<p>${content.text}</p>`
-        message.scrollIntoView()
+        message.innerHTML += `<span>${content.text}</span>`
         document.querySelector(".messages-box").appendChild(message)
+        message.scrollIntoView()
     }
     
 }
@@ -163,7 +163,7 @@ function toggleAside(){
         document.querySelector("aside > nav").classList.add("nav_out")
         setTimeout(()=>{
             document.querySelector("aside").classList.toggle("disabled")
-        }, 300)
+        }, 1000)
     }
     else{
         document.querySelector("aside > nav").classList.remove("nav_out")
